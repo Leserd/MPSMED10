@@ -22,6 +22,8 @@ public class SpawnRocket : MonoBehaviour {
             rocket.transform.Rotate(new Vector3(x, y, z));
 
             rocket.GetComponent<RocketInfo>().fireworksIndex = curFireworksIndex;
+            EventManager.instance.NewRocket(rocket.transform);
+
             curFireworksIndex++;
         }
 	}
