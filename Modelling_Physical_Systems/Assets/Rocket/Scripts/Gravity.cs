@@ -44,10 +44,7 @@ public class Gravity : MonoBehaviour {
 
             gravityForce = rb.mass * gravityDirection * gravityAcceleration;
 
-            //rb.AddForce(gravityForce);
-
             rb.AddForceAtPosition(gravityForce, ri.centerOfGravityPos.position);
-            //Debug.Log(rb.angularVelocity);
         }
         
     }

@@ -12,16 +12,22 @@ public class RocketInfo : MonoBehaviour {
 
     private float totalWeight;
 
+
+
     private void Awake()
     {
 
         rb = GetComponent<Rigidbody>();
     }
 
+
+
     private void FixedUpdate()
     {
         rb.mass = TotalWeight();
     }
+
+
 
     public float TotalWeight()
     {

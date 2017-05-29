@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AirDrag : MonoBehaviour {
 
-    
     public float dragCoefficient = 0.42f;   //Halfsphere (rocketHead) drag coefficient = 0.42
     public float dragForce;
     public Vector3 dragDirection;
@@ -13,6 +12,7 @@ public class AirDrag : MonoBehaviour {
 
     private Rigidbody rb;
     private RocketInfo ri;
+
 
     private void Awake()
     {
@@ -23,8 +23,7 @@ public class AirDrag : MonoBehaviour {
 
     private void FixedUpdate()
     {
-
-        rb.AddForceAtPosition(-ri.thrustPos.up * CalculateDragForce(), ri.centerOfGravityPos.position);
+        rb.AddForceAtPosition(-rocketHead.up * CalculateDragForce(), rocketHead.position);
     }
 
 
@@ -33,7 +32,6 @@ public class AirDrag : MonoBehaviour {
         float area = 0;
 
         area += Mathf.PI * rocketHead.localScale.x * rocketHead.localScale.x;
-        //area += rocketStick.localScale.x * rocketStick.localScale.y * rocketStick.localScale.z;
 
         return area;
     }

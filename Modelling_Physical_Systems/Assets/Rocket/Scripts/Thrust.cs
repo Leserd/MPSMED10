@@ -69,13 +69,11 @@ public class Thrust : MonoBehaviour {
 
         while (Time.time < endTime)
         {
-            rb.AddForceAtPosition(thrustPos.up * thrustForce, thrustPos.position, ForceMode.Force);
+            rb.AddForceAtPosition(thrustPos.up * thrustForce, thrustPos.position);
             rb.AddRelativeTorque(new Vector3(0, torqueForce, 0));
-            //transform.RotateAround(transform.localPosition, transform.up, torqueForce * Time.fixedDeltaTime);
 
             yield return new WaitForFixedUpdate();
         }
-        //Debug.Log("Thrust stopped");
 
         yield return new WaitForSeconds(timeBeforeExplode);
         ri.thrustPos.GetComponent<TrailRenderer>().enabled = false;
