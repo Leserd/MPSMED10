@@ -26,7 +26,7 @@ public class AirDrag : MonoBehaviour {
     public float CalculateSurfaceArea()
     {
         float area = 0;
-        area += Mathf.PI * rocketHead.localScale.x * rocketHead.localScale.x;
+        area += Mathf.PI * (rocketHead.localScale.x/2) * (rocketHead.localScale.x / 2);
         return area;
     }
 
