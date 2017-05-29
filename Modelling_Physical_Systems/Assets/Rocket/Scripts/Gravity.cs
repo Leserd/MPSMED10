@@ -17,7 +17,7 @@ public class Gravity : MonoBehaviour {
         EventManager.StartThrust += EnableGravity;
         rb = GetComponent<Rigidbody>();
         ri = GetComponent<RocketInfo>();
-        //RocketInfo.instance.centerOfGravityPos.localPosition = CalcCenterOfGravity;
+        ri.centerOfGravityPos.localPosition = CalcCenterOfGravity;
     }
 
 
